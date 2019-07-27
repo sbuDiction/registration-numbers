@@ -12,12 +12,47 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="box center">
-            <strong>CA 1234</strong>  
+            <div class="col-12 center">
+                <h1>Registration Numbers</h1>
             </div>
         </div>
+        <div class="row">
+            <div class="box center">
+                <input name="textarea" rows="2" cols="20" class="input" placeholder="Type Registration-Num"></input>
+                <!-- <strong>CA 1234</strong> -->
+            </div>
+
+            <div class="center addItem">
+                <button class="button-primary addBtn">ADD</button>
+            </div>
+
+        </div>
+        <div class="row">
+            <div id="dropDown">
+                <select id="dropDown">
+                    <option value="durban">Durban</option>
+                    <option value="cape">Cape Town</option>
+                    <option value="goli">Gauteng</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <ul id="regList">
+
+                </ul>
+            </div>
+            <div class="col-6">
+                <ul id="city">
+
+                </ul>
+            </div>
+        </div>
+
     </div>
     <script src="js/logic.js" charset="utf-8"></script>
+    <script src="js/Dom/dom.js" charset="utf-8"></script>
 </body>
 
 </html>
