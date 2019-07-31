@@ -18,37 +18,66 @@
         </div>
         <div class="row">
             <div class="box center">
-                <input name="textarea" rows="2" cols="20" class="input" placeholder="Type Registration-Num"></input>
+                <input style="float: center" name="textarea" rows="2" cols="20" class="input" placeholder="Type Registration-Num"></input>
                 <!-- <strong>CA 1234</strong> -->
             </div>
-
-            <div class="center addItem">
-                <button class="button-primary addBtn">ADD</button>
+            <div class="row">
+                <div class="center addItem">
+                    <button style="float: center" class="button-primary addBtn">Add</button>
+                </div>
             </div>
 
         </div>
         <div class="row">
-            <div id="dropDown">
-                <select id="dropDown">
-                    <option value="durban">Durban</option>
-                    <option value="cape">Cape Town</option>
-                    <option value="goli">Gauteng</option>
-                </select>
-            </div>
+                <label class="row">
+                        <input type="radio" name="radioType" class="city" value="">
+                        <span class="label-body">Show all towns</span>
+                    </label>
+
+            <label class="row">
+                <input type="radio" name="radioType" class="city" value="CA">
+                <span class="label-body">Cape Town</span>
+            </label>
+
+            <label class="row">
+                <input type="radio" name="radioType" class="city" value="ND">
+                <span class="label-body">Durban</span>
+            </label>
+
+            <label class="row">
+                <input type="radio" name="radioType" class="city" value="GP">
+                <span class="label-body">Gauteng</span>
+            </label>
+
+            <label class="row">
+                    <input type="radio" name="radioType" class="city" value="CY">
+                    <span class="label-body">Belvile</span>
+                </label>
+
+                <label class="row">
+                        <input type="radio" name="radioType" class="city" value="NN">
+                        <span class="label-body">Newcastle</span>
+                    </label>
+
+                    
+
         </div>
-
-        <div class="row">
-            <div class="col-6">
-                <ul id="regList">
-
-                </ul>
-            </div>
-            <div class="col-6">
-                <ul id="city">
-
-                </ul>
-            </div>
+    <div class="row">
+        <div class="">
+                <button style="float: center" class="button-primary showBtn">Show</button>
         </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6">
+            <ul id="regList">
+
+            </ul>
+        </div>
+        <div class="col-6">
+            <ul id="city"></ul>
+        </div>
+    </div>
 
     </div>
     <script src="js/logic.js" charset="utf-8"></script>
