@@ -250,17 +250,20 @@ p {
   }
 }
 
-li {
-   display: block; 
-    padding-bottom: 20%;
-    border-radius: 25%;
-    border: solid #000000;
-    background: rgb(211, 216, 204);
-    padding: 2%; 
-    width: 20%;
-    height: 20%;  
-      
-} 
+li{
+  border: 1px solid black;
+  background-color: rgba(160, 166, 172, 0.842);
+  border-radius: 5px;
+  width:120px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0px ;
+  margin-bottom: 5px;
+  font-size: 19px;
+  float : center;
+  list-style: none;
+}
 .addBtn {
 
     border-radius: 8px;
