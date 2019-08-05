@@ -5,9 +5,9 @@ const RegNumbers = () => {
     const addRegistration = (regNu) => {
         const upCase = regNu.toUpperCase()
         const regex = /[A-Z]{2}\s[0-9]{3}\s[0-9]{3}/gi;
-        const runRegex = regex.test(upCase)
+        const regexExpression = regex.test(upCase)
 
-        if (runRegex === true) {
+        if (regexExpression === true) {
             if (!regNumbers.includes(upCase)) {
                 regNumbers.push(upCase);
             }
