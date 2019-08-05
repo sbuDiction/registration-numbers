@@ -1,19 +1,27 @@
 const RegNumbers = () => {
     let regNumbers = [];
-    let filteResults = []
+    let filteResults = [];
+    let errorMessage = "";
 
     const addRegistration = (regNu) => {
         const upCase = regNu.toUpperCase()
         const regex = /[A-Z]{2}\s[0-9]{3}\s[0-9]{3}/gi;
         const regexExpression = regex.test(upCase)
 
+
         if (regexExpression === true) {
+            errorMessage = "";
             if (!regNumbers.includes(upCase)) {
                 regNumbers.push(upCase);
+            } else {
+                errorMessage = "Reg number already exists"
             }
-        } console.log(regNumbers);
+        } else {
+            // this is not a valid reg number...
+            errorMessage = "Invalid reg number!!!"
+        }
     }
-    
+
     const filter = (townTag) => {
         filteResults = [];
 
@@ -33,13 +41,11 @@ const RegNumbers = () => {
         return filteResults;
     }
 
+
     const getStoredRegistration = () => regNumbers;
 
-    const errorHandling = (numberTest) => {
-        if (numberTest === "") {
-            return "stop"
-        }
-    }
+    const errorHandling = () => errorMessage;
+
 
     return {
         add: addRegistration,

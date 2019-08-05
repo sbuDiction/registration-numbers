@@ -22,9 +22,13 @@ setMax.addEventListener("input", function () {
         erroElement.innerHTML = "eg('CA 123 344')";
     }
 })
+
 //add button event for when clicked
 addBtn.addEventListener("click", function () {
     instance.add(getRegNumber.value);
+
+    erroElement.innerHTML = instance.error();
+
     let regNumbers = instance.getRegNumbers();
     div.innerHTML = '';
     regNumbers.forEach(element => {
