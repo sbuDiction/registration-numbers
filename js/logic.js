@@ -1,21 +1,20 @@
-var RegNumbers = function () {
+const RegNumbers = () => {
     let regNumbers = [];
     let filteResults = []
 
-    function addRegistration(regNu) {
-
-        let upCase = regNu.toUpperCase()
-        let regex = /[A-Z]{2}\s[0-9]{3}\s[0-9]{3}/gi;
-        let runRegex = regex.test(upCase)
+    const addRegistration = (regNu) => {
+        const upCase = regNu.toUpperCase()
+        const regex = /[A-Z]{2}\s[0-9]{3}\s[0-9]{3}/gi;
+        const runRegex = regex.test(upCase)
 
         if (runRegex === true) {
             if (!regNumbers.includes(upCase)) {
                 regNumbers.push(upCase);
             }
-        }
-        console.log(regNumbers);
-    };
-    function filter(townTag) {
+        } console.log(regNumbers);
+    }
+    
+    const filter = (townTag) => {
         filteResults = [];
 
         if (valid = false) {
@@ -32,9 +31,10 @@ var RegNumbers = function () {
             }
         }
         return filteResults;
-    };
+    }
 
     const getStoredRegistration = () => regNumbers;
+
     const errorHandling = (numberTest) => {
         if (numberTest === "") {
             return "stop"
