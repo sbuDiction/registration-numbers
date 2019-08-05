@@ -4,39 +4,32 @@ let showCity = document.querySelector(".showBtn");
 let div = document.getElementById("regList");
 let radio = document.querySelector(".city");
 let radioBtn = document.querySelectorAll(".city");
-let erroElement = document.querySelector("error")
+let erroElement = document.getElementById("error");
+let setMax = document.getElementById("input");
 let newDiv;
 
-let instance = RegNumbers()
+JSON.parse(window.localStorage.getItem("Reg"));
+
+let instance = RegNumbers();
+
 
 addBtn.addEventListener("click", function () {
+    instance.add(getRegNumber.value);
+    let regNumbers = instance.getRegNumbers();
+    div.innerHTML = '';
 
-        if (getRegNumber.value != "") {
-            instance.add(getRegNumber.value);
-            let regNumbers = instance.getRegNumbers();
-            //  localStorage.setItem("RegNumbers", instance.getRegNumbers())
-            div.innerHTML = '';
-            regNumbers.forEach(element => {
-                console.log(element);
-                displayReg(element);
-            });
-            localStorage["item"] = JSON.stringify(instance.getRegNumbers())
-            getRegNumber.value = "";
+    regNumbers.forEach(element => {
+        console.log(element);
+        displayReg(element);
+    });
 
-        }
-        erroMsg();
+    window.localStorage.setItem("Reg", JSON.stringify(instance.getRegNumbers()))
+    getRegNumber.value = "";
 
+    if(getRegNumber.value === ""){
+        erroElement.innerHTML = "Please add number plate!"
     }
-
-)
-
-
-function erroMsg() {
-    if (getRegNumber.value === "") {
-        erroElement.innerHTML = "Please enter licence plate";
-    }
-}
-console.log(erroElement.innerHTML);
+})
 
 function displayReg(RegNumber) {
     newDiv = document.createElement("li");
@@ -54,7 +47,19 @@ showCity.addEventListener("click", function () {
         console.log(element);
         displayReg(element);
     });
+})
 
-
+setMax.addEventListener("input", function () {
+    if (setMax.maxLength = "10") {
+        setTimeout(function () {
+            erroElement.classList.add("alert");
+            erroElement.innerHTML = "Stop!";
+        })
+    }
 
 })
+const showError = () => {
+    if (instance.error() === "stop") {
+        erroElement.classList.add("alert")
+    }
+}

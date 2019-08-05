@@ -261,7 +261,7 @@ li{
   margin-top: 0px ;
   margin-bottom: 5px;
   font-size: 19px;
-  float : center;
+  float : right;
   list-style: none;
 }
 .addBtn {
@@ -292,4 +292,8 @@ li{
     display: inline-block;
     font-size: 16px;
     /* padding-bottom: 30%; */
+  }
+
+  .alert{
+    text-decoration-color: red;
   }
