@@ -33,11 +33,11 @@ const RegNumbers = () => {
     const filter = (townTag) => {
         filteResults = [];
 
-        if (valid = false) {
+    
             if (townTag === "" || townTag === undefined) {
                 return regNumbers;
             }
-        }
+    
         for (let i = 0; i < regNumbers.length; i++) {
 
             if (regNumbers[i].startsWith(townTag)) {
