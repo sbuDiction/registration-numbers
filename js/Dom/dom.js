@@ -37,7 +37,7 @@ addBtn.addEventListener("click", function () {
     getRegNumber.value = "";
     //window.localStorage.setItem("Reg", JSON.stringify(instance.getRegNumbers()))
 })
-//event for the filter to filter between different towns
+//event for the filter to fil2019181716131415121110987212223242526ter between different towns
 showCity.addEventListener("click", function () {
     let selectedRadioBtn = document.querySelector("input[name='radioType']:checked")
     console.log(selectedRadioBtn.value);
