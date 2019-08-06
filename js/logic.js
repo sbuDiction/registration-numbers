@@ -17,12 +17,9 @@ const RegNumbers = () => {
             } else {
                 errorMessage = "Reg number already exists"
             }
-        }
-        else {
+        } else {
             errorMessage = "Invalid reg number!!!"
         }
-
-
         if (unOrderedRegex === true) {
             errorMessage = "";
             if (!regNumbers.includes(upCase)) {
@@ -31,10 +28,6 @@ const RegNumbers = () => {
                 errorMessage = "Reg number already exists"
             }
         }
-        else {
-            errorMessage = "Invalid reg number!!!"
-        }
-        // this is not a valid reg number...
     }
 
     const filter = (townTag) => {
