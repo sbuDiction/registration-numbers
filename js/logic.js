@@ -5,9 +5,10 @@ const RegNumbers = () => {
 
     const addRegistration = (regNu) => {
         const upCase = regNu.toUpperCase()
-        const regex = /[A-Z]{2}\s[0-9]{3}\s[0-9]{3}/gi && /[0-9]{3}\s[0-9]{3}\s[A-Z]{2}/gi;
+        const regex = /[A-Z]{2}\s[0-9]{3}\s[0-9]{3}/gi;
+        const regexNonExpression = /[0-9]{3}\s[0-9]{3}\s[A-Z]{2}/gi;
         const regexExpression = regex.test(upCase)
-
+        const unOrderedRegex = regexNonExpression.test(upCase)
 
         if (regexExpression === true) {
             errorMessage = "";
@@ -16,7 +17,21 @@ const RegNumbers = () => {
             } else {
                 errorMessage = "Reg number already exists"
             }
-        } else {
+        }
+        else {
+            errorMessage = "Invalid reg number!!!"
+        }
+
+
+        if (unOrderedRegex === true) {
+            errorMessage = "";
+            if (!regNumbers.includes(upCase)) {
+                regNumbers.push(upCase);
+            } else {
+                errorMessage = "Reg number already exists"
+            }
+        }
+        else {
             errorMessage = "Invalid reg number!!!"
         }
         // this is not a valid reg number...
