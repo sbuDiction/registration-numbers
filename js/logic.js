@@ -1,5 +1,5 @@
-const RegNumbers = () => {
-    let regNumbers = [];
+const RegNumbers = (number) => {
+    let regNumbers = number || [];
     let filteResults = [];
     let errorMessage = "";
 
@@ -32,12 +32,9 @@ const RegNumbers = () => {
 
     const filter = (townTag) => {
         filteResults = [];
-
-    
-            if (townTag === "" || townTag === undefined) {
-                return regNumbers;
-            }
-    
+        if (townTag === "" || townTag === undefined) {
+            return regNumbers;
+        }
         for (let i = 0; i < regNumbers.length; i++) {
 
             if (regNumbers[i].startsWith(townTag)) {

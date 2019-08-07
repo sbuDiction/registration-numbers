@@ -7,7 +7,17 @@ let radioBtn = document.querySelectorAll(".city");
 let erroElement = document.getElementById("error");
 let setMax = document.getElementById("input");
 let newDiv;
-let instance = RegNumbers();
+
+let newStore
+if (localStorage['Reg']) {
+    newStore = JSON.parse(localStorage['Reg']);
+} else {
+    newStore = [];
+}
+let instance = RegNumbers(newStore);
+
+
+
 
 //error msg 
 if (getRegNumber.value === "") {
@@ -35,18 +45,25 @@ addBtn.addEventListener("click", function () {
         displayReg(element);
     });
     getRegNumber.value = "";
-    //window.localStorage.setItem("Reg", JSON.stringify(instance.getRegNumbers()))
+    window.localStorage.setItem("Reg", JSON.stringify(instance.getRegNumbers()))
 })
-//event for the filter to fil2019181716131415121110987212223242526ter between different towns
+
+
+//event for the filter to filter between different towns
 showCity.addEventListener("click", function () {
-    let selectedRadioBtn = document.querySelector("input[name='radioType']:checked")
-    console.log(selectedRadioBtn.value);
-    let filteredResults = instance.filtered(selectedRadioBtn.value);
+
+    radio = document.querySelector("input[name='radioType']:checked")
+    if (!radio) {
+        erroElement.innerHTML = "Please select town!"
+    }
+    let filteredResults = instance.filtered(radio.value);
     div.innerHTML = '';
     filteredResults.forEach(element => {
         displayReg(element);
     });
+
 })
+
 //for appending elements on the dom dynamically 
 const displayReg = (RegNumber) => {
     newDiv = document.createElement("li");
@@ -54,3 +71,8 @@ const displayReg = (RegNumber) => {
     newDiv.appendChild(newContent);
     div.appendChild(newDiv);
 }
+
+let update = instance.filtered(radio.value)
+update.forEach(element => {
+    displayReg(element)
+});
