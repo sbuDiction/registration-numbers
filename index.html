@@ -5,85 +5,141 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
     <link rel="stylesheet" href="asserts/styling.css">
     <title>Registration-Numbers</title>
 </head>
 
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-12 center">
-                <h1>Registration Numbers</h1>
-            </div>
-        </div>
-        <div class="row">
-            <div class="box center">
-                <input style="float: center" id="input" name="textarea" class="input"
-                    placeholder="Type Registration-Num"></input>
-                <div id="error" class="error" style="float: center"></div>
-            </div>
-
+    <div class="col-6">
+        <div class="container">
             <div class="row">
-                <div class="center addItem">
-                    <button style="float: center" class="button-primary addBtn">Add</button>
+                <div class="col-12 center">
+                    <h1>Registration Numbers</h1>
                 </div>
             </div>
+            <div class="row">
+                <div class="box center">
+                    <input style="float: center" id="input" name="textarea" class="input"
+                        placeholder="Type Registration-Num"></input>
+                    <div id="error" class="error" style="float: center"></div>
+                </div>
 
-        </div>
-        <div class="row">
-            <label class="row">
-                <input type="radio" name="radioType" class="city" value="">
-                <span class="label-body">Show all towns</span>
-            </label>
-
-            <label class="row">
-                <input type="radio" name="radioType" class="city" value="CA">
-                <span class="label-body">Cape Town</span>
-            </label>
-
-            <label class="row">
-                <input type="radio" name="radioType" class="city" value="ND">
-                <span class="label-body">Durban</span>
-            </label>
-
-            <label class="row">
-                <input type="radio" name="radioType" class="city" value="GP">
-                <span class="label-body">Gauteng</span>
-            </label>
-
-            <label class="row">
-                <input type="radio" name="radioType" class="city" value="CY">
-                <span class="label-body">Belville</span>
-            </label>
-
-            <label class="row">
-                <input type="radio" name="radioType" class="city" value="NN">
-                <span class="label-body">Newcastle</span>
-            </label>
-
-
-
-        </div>
-        <div class="row">
-            <div class="">
-                <button style="float: center" class="button-primary showBtn">Show</button>
+                <div class="row">
+                    <div class="center addItem">
+                        <button style="float: center" class="button-primary addBtn">Add</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <label class="row">
+                    <input type="radio" name="radioType" class="city" value="">
+                    <span class="label-body">Show all towns</span>
+                </label>
+                <label class="row">
+                    <input type="radio" name="radioType" class="city" value="CA">
+                    <span class="label-body">Cape Town</span>
+                </label>
+                <label class="row">
+                    <input type="radio" name="radioType" class="city" value="ND">
+                    <span class="label-body">Durban</span>
+                </label>
+                <label class="row">
+                    <input type="radio" name="radioType" class="city" value="GP">
+                    <span class="label-body">Gauteng</span>
+                </label>
+                <label class="row">
+                    <input type="radio" name="radioType" class="city" value="CY">
+                    <span class="label-body">Belville</span>
+                </label>
+                <label class="row">
+                    <input type="radio" name="radioType" class="city" value="NN">
+                    <span class="label-body">Newcastle</span>
+                </label>
+            </div>
+            <div class="row">
+                <div class="">
+                    <button style="float: center" class="button-primary showBtn">Show</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <ul id="regList">
+                    </ul>
+                </div>
+                <div class="col-12">
+                    <ul id="city"></ul>
+                </div>
             </div>
         </div>
-
-        <div class="row">
-            <div class="col-6">
-                <ul id="regList">
-
-                </ul>
+    </div>
+    <!-- intersection of the pages -->
+    <div class="col-6">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 center">
+                    <h1>Registration Numbers</h1>
+                </div>
             </div>
-            <div class="col-6">
-                <ul id="city"></ul>
+            <div class="row">
+                <div class="box center">
+                    <input style="float: center" id="inputTemplate" name="textarea" class="inputTemplate"
+                        placeholder="Type Registration-Num"></input>
+                    <div id="templateError" class="error" style="float: center"></div>
+                </div>
+                <div class="row">
+                    <div class="center addItem">
+                        <button style="float: center" class="button-primary addTemplate">Add</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <label class="row">
+                    <input type="radio" name="template" class="townTag" value="">
+                    <span class="label-body">Show all towns</span>
+                </label>
+                <label class="row">
+                    <input type="radio" name="template" class="townTag" value="CA">
+                    <span class="label-body">Cape Town</span>
+                </label>
+                <label class="row">
+                    <input type="radio" name="template" class="townTag" value="ND">
+                    <span class="label-body">Durban</span>
+                </label>
+                <label class="row">
+                    <input type="radio" name="template" class="townTag" value="GP">
+                    <span class="label-body">Gauteng</span>
+                </label>
+                <label class="row">
+                    <input type="radio" name="template" class="townTag" value="CY">
+                    <span class="label-body">Belville</span>
+                </label>
+                <label class="row">
+                    <input type="radio" name="template" class="townTag" value="NN">
+                    <span class="label-body">Newcastle</span>
+                </label>
+            </div>
+            <div class="row">
+                <div class="">
+                    <button style="float: center" class="button-primary showBtnTemplate">Show</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <ul class="regs">
+                        <script type="text/x-template" class="userDataTemplate">
+                            {{#each plateNumber}}
+                                <li>{{this}}</li>
+                            {{/each}}
+                        </script>
+                    </ul>
+                </div>
             </div>
         </div>
-
     </div>
     <script src="js/logic.js" charset="utf-8"></script>
     <script src="js/Dom/dom.js" charset="utf-8"></script>
+    <script src="js/Dom/template.js" charset="utf-8"></script>
 </body>
 
 </html>

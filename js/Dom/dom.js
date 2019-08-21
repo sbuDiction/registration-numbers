@@ -14,10 +14,8 @@ if (localStorage['Reg']) {
 } else {
     newStore = [];
 }
+
 let instance = RegNumbers(newStore);
-
-
-
 
 //error msg 
 if (getRegNumber.value === "") {
@@ -47,7 +45,6 @@ addBtn.addEventListener("click", function () {
     getRegNumber.value = "";
     window.localStorage.setItem("Reg", JSON.stringify(instance.getRegNumbers()))
 })
-
 
 //event for the filter to filter between different towns
 showCity.addEventListener("click", function () {

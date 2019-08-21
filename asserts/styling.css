@@ -16,9 +16,11 @@ body {
     left: 0;
     top: 0;
     font-size: 100%;
-    background-color: #c1ceda69;
+    background-image: url("/matrix.jpg");
 }
-
+body{
+    background-image: url("/matrix.jpg")
+}
 
 /* ROOT FONT STYLES */
 
@@ -213,6 +215,7 @@ p {
     }
     .col-6 {
         width: 46%;
+        float: left;
     }
     .col-7 {
         width: 54.33%;
@@ -273,11 +276,38 @@ li {
     font-size: 16px;
 }
 
+.addTemplate {
+    border-radius: 8px;
+    background-color: #4CAF50;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
 .addItem {
     padding-top: 4%
 }
 
 .showBtn {
+    border-radius: 8px;
+    background-color: #4CAF50;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    /* padding-bottom: 30%; */
+}
+
+.showBtnTemplate {
     border-radius: 8px;
     background-color: #4CAF50;
     /* Green */
@@ -300,3 +330,8 @@ li {
     color: rgb(14, 12, 12);
     font-weight: bold;
 }
+.template {
+    width: 600px;
+    /* margin-left: auto; */
+    margin-right: auto;
+  }
