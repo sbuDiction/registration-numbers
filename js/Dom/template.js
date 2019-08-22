@@ -54,6 +54,7 @@ showButtonCity.addEventListener("click", function () {
 //create a list element with a licince plate on function call.
 const makeRegNumbers = (reg) => {
     let plateData = { plateNumber: reg }
+    
     let displayData = compiledTemp(plateData)
     templateData.innerHTML = displayData
 }
