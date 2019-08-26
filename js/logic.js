@@ -3,6 +3,7 @@ const RegNumbers = (number) => {
     let filteResults = [];
     let errorMessage = "";
 
+
     const addRegistration = (regNu) => {
         const upCase = regNu.toUpperCase()
         const regex = /[A-Z]{2}\s[0-9]{3}\s[0-9]{3}/gi;
@@ -17,11 +18,16 @@ const RegNumbers = (number) => {
         const only4Test = onlyFourExpree.test(upCase);
 
         if (regexExpression === true || unOrderedRegex === true || nonTest === true || onlyTest === true || only4Test === true) {
-            errorMessage = "";
-            if (!regNumbers.includes(upCase)) {
-                regNumbers.push(upCase);
-            } else {
-                errorMessage = "Reg number already exists"
+            errorMessage = "added!!!";
+            if (upCase.startsWith("CA") || upCase.startsWith("NN") || upCase.endsWith("GP") || upCase.startsWith("CY") || upCase.startsWith("NN")) {
+                if (!regNumbers.includes(upCase)) {
+                    regNumbers.push(upCase);
+                }else{
+                    errorMessage = "Reg number already exist!"
+                }
+            }
+            else {
+                errorMessage = "Reg number not valid"
             }
 
         } else {
