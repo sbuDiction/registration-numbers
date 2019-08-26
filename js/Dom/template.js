@@ -9,6 +9,7 @@ let compiledTemp = Handlebars.compile(template);
 let templateData = document.querySelector(".regs");
 let clearElem = document.querySelector(".clearList")
 let secondErrorMsg = document.getElementById("templateError2")
+let resetBtn = document.querySelector(".showBtnTemplateReset");
 
 let plateStore
 if (localStorage['template']) {
@@ -55,10 +56,18 @@ showButtonCity.addEventListener("click", function () {
 //create a list element with a licince plate on function call.
 const makeRegNumbers = (reg) => {
     let plateData = { plateNumber: reg }
-    
+
     let displayData = compiledTemp(plateData)
     templateData.innerHTML = displayData
 }
+
+resetBtn.addEventListener("click", function () {
+    instanceReg.clear()
+    localStorage.removeItem("template");
+    templateData.innerHTML = ""
+
+})
+
 //reload the plates on every page load.
 let updateTemplate = instanceReg.filtered(radioTemplate.value)
 makeRegNumbers(updateTemplate);

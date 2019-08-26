@@ -57,11 +57,16 @@ const RegNumbers = (number) => {
 
     const errorHandling = () => errorMessage;
 
+    const clearList = () =>{
+        regNumbers = [];
+    }
+
 
     return {
         add: addRegistration,
         filtered: filter,
         getRegNumbers: getStoredRegistration,
         error: errorHandling,
+        clear: clearList,
     }
 }

@@ -6,6 +6,7 @@ let radio = document.querySelector(".city");
 let radioBtn = document.querySelectorAll(".city");
 let erroElement = document.getElementById("error");
 let setMax = document.getElementById("input");
+let reset = document.querySelector(".showBtnReset");
 let newDiv;
 
 let newStore
@@ -68,6 +69,12 @@ const displayReg = (RegNumber) => {
     newDiv.appendChild(newContent);
     div.appendChild(newDiv);
 }
+
+reset.addEventListener("click", function(){
+    instance.clear()
+    localStorage.removeItem("Reg")
+    div.innerHTML = "";
+})
 
 let update = instance.filtered(radio.value)
 update.forEach(element => {

@@ -299,6 +299,30 @@ li {
     font-size: 16px;
 }
 
+.showBtnTemplateReset {
+    border-radius: 8px;
+    background-color: rgb(206, 50, 50);
+    border: none;
+    color: white;
+    padding: 15px 15px 20;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.showBtnReset{
+    border-radius: 8px;
+    background-color: rgb(223, 32, 32);
+    border: none;
+    color: white;
+    padding: 15px 15px 20;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
 .alert {
     color: rgb(255, 0, 0);
     font-weight: bold;
