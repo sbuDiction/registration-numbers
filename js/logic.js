@@ -9,7 +9,7 @@ const RegNumbers = (number) => {
         const regexNonExpression = /[0-9]{3}\s[0-9]{3}\s[A-Z]{2}/gi;
         const anyNonRegex = /[A-Z]{2}\s[0-9]{3}\S[0-9]{3}/gi;
         const onlyThreeExpre = /[A-Z]{2}\s[0-9]{3}/gi;
-        const onlyFourExpree = /[A-Z]{2}\s[0-9]{4}/gi;
+        const onlyFourExpree = /[A-Z]{2}[0-9]{4}/gi;
         const regexExpression = regex.test(upCase)
         const unOrderedRegex = regexNonExpression.test(upCase)
         const nonTest = anyNonRegex.test(upCase)
@@ -31,7 +31,8 @@ const RegNumbers = (number) => {
             errorMessage = "";
             if (!regNumbers.includes(upCase)) {
                 regNumbers.push(upCase);
-            } else {
+            }
+            else {
                 errorMessage = "Reg number already exists"
             }
         }
@@ -40,7 +41,8 @@ const RegNumbers = (number) => {
             errorMessage = "";
             if (!regNumbers.includes(upCase)) {
                 regNumbers.push(upCase);
-            } else {
+            }
+            else {
                 errorMessage = "Reg number already exists"
             }
         }
@@ -49,7 +51,8 @@ const RegNumbers = (number) => {
             errorMessage = "";
             if (!regNumbers.includes(upCase)) {
                 regNumbers.push(upCase);
-            } else {
+            }
+            else {
                 errorMessage = "Reg number already exists"
             }
         }
@@ -59,13 +62,13 @@ const RegNumbers = (number) => {
             if (!regNumbers.includes(upCase)) {
                 regNumbers.push(upCase);
             }
-            //  else {
-            //     errorMessage = "Reg number already exists"
-            // }
+            else {
+                errorMessage = "Reg number already exists"
+            }
         }
     }
 
-    
+
 
     const filter = (townTag) => {
         filteResults = [];
