@@ -7,8 +7,14 @@ const RegNumbers = (number) => {
         const upCase = regNu.toUpperCase()
         const regex = /[A-Z]{2}\s[0-9]{3}\s[0-9]{3}/gi;
         const regexNonExpression = /[0-9]{3}\s[0-9]{3}\s[A-Z]{2}/gi;
+        const anyNonRegex = /[A-Z]{2}\s[0-9]{3}\S[0-9]{3}/gi;
+        const onlyThreeExpre = /[A-Z]{2}\s[0-9]{3}/gi;
+        const onlyFourExpree = /[A-Z]{2}\s[0-9]{4}/gi;
         const regexExpression = regex.test(upCase)
         const unOrderedRegex = regexNonExpression.test(upCase)
+        const nonTest = anyNonRegex.test(upCase)
+        const onlyTest = onlyThreeExpre.test(upCase)
+        const only4Test = onlyFourExpree.test(upCase)
 
         if (regexExpression === true) {
             errorMessage = "";
@@ -20,6 +26,7 @@ const RegNumbers = (number) => {
         } else {
             errorMessage = "Invalid reg number!!!"
         }
+
         if (unOrderedRegex === true) {
             errorMessage = "";
             if (!regNumbers.includes(upCase)) {
@@ -28,7 +35,37 @@ const RegNumbers = (number) => {
                 errorMessage = "Reg number already exists"
             }
         }
+
+        if (nonTest === true) {
+            errorMessage = "";
+            if (!regNumbers.includes(upCase)) {
+                regNumbers.push(upCase);
+            } else {
+                errorMessage = "Reg number already exists"
+            }
+        }
+
+        if (onlyTest === true) {
+            errorMessage = "";
+            if (!regNumbers.includes(upCase)) {
+                regNumbers.push(upCase);
+            } else {
+                errorMessage = "Reg number already exists"
+            }
+        }
+
+        if (only4Test === true) {
+            errorMessage = "";
+            if (!regNumbers.includes(upCase)) {
+                regNumbers.push(upCase);
+            }
+            //  else {
+            //     errorMessage = "Reg number already exists"
+            // }
+        }
     }
+
+    
 
     const filter = (townTag) => {
         filteResults = [];

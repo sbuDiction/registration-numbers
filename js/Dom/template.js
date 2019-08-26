@@ -8,6 +8,7 @@ let template = document.querySelector(".userDataTemplate").innerHTML;
 let compiledTemp = Handlebars.compile(template);
 let templateData = document.querySelector(".regs");
 let clearElem = document.querySelector(".clearList")
+let secondErrorMsg = document.getElementById("templateError2")
 
 let plateStore
 if (localStorage['template']) {
